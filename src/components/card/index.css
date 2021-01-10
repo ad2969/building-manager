@@ -49,6 +49,13 @@
     font-size: 1.4em;
 }
 
+.card-description__new-tag {
+    background: peachpuff;
+    border-radius: 0.5em;
+    margin-right: 0.5em;
+    padding: 0.25em 0.5em;
+}
+
 .card-description__date {
     width: 30%;
     text-align: right;

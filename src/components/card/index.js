@@ -14,10 +14,12 @@ const textColor = colorRandomizer()
 const Card = (props) => {
 
   const {
-    category,
+    category = '',
     title,
-    date,
+    date = '',
     imageUrl,
+    isNew = false,
+    likeable = true,
   } = props;
 
   const [liked, setLiked] = useState(false)
@@ -27,15 +29,18 @@ const Card = (props) => {
       <div className="card-photo">
         <img src={imageUrl} alt={`card-${title}`} />
       </div>
-      <div className="card-like" onClick={() => setLiked(!liked)}>
+      {likeable && <div className="card-like" onClick={() => setLiked(!liked)}>
           {liked ?  <HeartFilled style={{ color: "red" }} /> : <HeartOutlined />}
-      </div>
+      </div>}
       <div className="card-description">
         <div className="card-description__text">
             <div className="card-description__text-category" style={{ color: textColor }}>{category}</div>
             <div className="card-description__text-title">{title}</div>
         </div>
-        <div className="card-description__date">{date}</div>
+        <div className="card-description__date">
+            {isNew && <span className="card-description__new-tag">New</span>}
+            {date}
+        </div>
       </div>
     </div>
   );

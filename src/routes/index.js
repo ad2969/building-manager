@@ -5,6 +5,8 @@ import Home from "./Home";
 import Landing from "./Landing";
 import NotFound from "./NotFound";
 
+import Navigation from "../components/navigation"
+
 const Routes = () => {
 
   // Load user session
@@ -22,6 +24,7 @@ const Routes = () => {
         <Route exact path="/" component={Landing} />
         <Route path="*" component={NotFound} />
       </Switch>
+      <Navigation />
     </BrowserRouter>
   );
 };
