@@ -3,7 +3,6 @@
     flex-direction: column;
 }
 .large-header {
-    color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -11,7 +10,11 @@
     background: rgb(83, 177, 117);
     border-radius: 0 0 2.5em 0;
 }
+.large-header > h1 {
+    color: white;
+}
 .large-header > .anticon {
+    color: white;
     font-size: 1.6em;
     margin-left: 1em;
 }
@@ -35,10 +38,28 @@
     flex-direction: row;
     align-items: center;
 }
-.content-header > a {
-    user-select: none;
-    text-decoration: none;
-    margin-left: auto;
-    color: blue;
-    font-weight: bold;
+
+.content > .ant-tabs > .ant-tabs-nav {
+    margin-bottom: 0;
+}
+.ant-tabs-nav-list {
+    margin: 1em 10% 0 10%;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ant-tabs-tab-btn {
+    font-size: 1.25em;
+}
+.ant-tabs-tab {
+    width: 50%;
+    justify-content: center;
+    margin: 0;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: rgb(83, 177, 117);
+}
+.ant-tabs-ink-bar {
+    background: rgb(83, 177, 117);
 }
