@@ -33,6 +33,9 @@
     flex-direction: column;
     z-index: 2;
 }
+.content-background.none {
+    background: none;
+}
 .content {
     padding: 0 1.5em 10em 1.5em;
     background: white;

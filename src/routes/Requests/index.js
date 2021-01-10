@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import RequestCard from "../../components/card/request"
+import { PlusCircleFilled } from "@ant-design/icons"
 import { Tabs } from 'antd';
 import "../index.css"
 
@@ -35,6 +37,7 @@ const Requests = () => {
                 </Tabs>
                 </div>
             </div>
+            <Link className="add-button" to="/requests/create"><PlusCircleFilled /></Link>
         </div>
     )
 }
