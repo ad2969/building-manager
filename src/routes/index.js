@@ -44,7 +44,7 @@ const Routes = () => {
         <PrivateRoute exact path="/requests/:slug" component={RequestDetails} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/requests" component={Requests} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/profile" component={Profile} isSignedIn={isSignedIn} />
-        <PrivateRoute exact path="/" component={Landing} isSignedIn={isSignedIn} />
+        <Route exact path="/" component={Landing} />
 
         {/* FALLBACK */}
         <Route path="*" component={NotFound} />
