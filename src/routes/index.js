@@ -12,6 +12,7 @@ import Community from "./Community";
 import NewsDetails from "./News/details";
 import Requests from "./Requests";
 import RequestDetails from "./Requests/details";
+import Profile from "./Profile";
 import NotFound from "./NotFound";
 
 import Navigation from "../components/navigation"
@@ -38,6 +39,7 @@ const Routes = () => {
         <PrivateRoute exact path="/community" component={Community} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/requests" component={Requests} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/requests/:slug" component={RequestDetails} isSignedIn={isSignedIn} />
+        <PrivateRoute exact path="/profile" component={Profile} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/" component={Landing} isSignedIn={isSignedIn} />
 
         {/* FALLBACK */}
