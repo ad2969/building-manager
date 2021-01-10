@@ -9,6 +9,7 @@ import FirebaseLogin from "./FirebaseAuth/firebaseLogin";
 import Landing from "./Landing";
 import News from "./News";
 import Community from "./Community";
+import CommunityCreate from "./Community/create";
 import NewsDetails from "./News/details";
 import Requests from "./Requests";
 import RequestDetails from "./Requests/details";
@@ -36,6 +37,7 @@ const Routes = () => {
         {/* USER ROUTES */}
         <PrivateRoute exact path="/news/:slug" component={NewsDetails} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/news" component={News} isSignedIn={isSignedIn} />
+        <PrivateRoute exact path="/community/create" component={CommunityCreate} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/community" component={Community} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/requests" component={Requests} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/requests/:slug" component={RequestDetails} isSignedIn={isSignedIn} />

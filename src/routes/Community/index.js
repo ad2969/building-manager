@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
-import { FilterOutlined, SearchOutlined } from "@ant-design/icons"
+import { FilterOutlined, SearchOutlined, PlusCircleFilled } from "@ant-design/icons"
 import CommunityCard from "../../components/card/community"
 import "../index.css"
 
@@ -20,6 +21,7 @@ const Community = () => {
                     {SAMPLE_COMMUNITY_POSTS.map((post) => <><CommunityCard {...post} /><hr /></> )}
                 </div>
             </div>
+            <Link className="add-button" to="/community/create"><PlusCircleFilled /></Link>
         </div>
     )
 }
