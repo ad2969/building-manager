@@ -3,8 +3,8 @@ export default [
         slug: "jan-10-2021-water-damage",
         progress: "IN_PROGRESS",
         title: "Water Damage",
-        submissionDate: "Sun Jan 10 2021",
-        completionDate: "Sat Feb 27 2021",
+        submissionDate: "Sun Jan 1 2021",
+        completionDate: "Sat Feb 2 2021",
         manager: "John Boxer",
         imageUrl: "https://diyinahour.com/diy/wp-content/uploads/2014/08/Water-Damage-1.jpg"
     },

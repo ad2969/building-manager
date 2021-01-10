@@ -1,0 +1,30 @@
+.profile-information {
+    display: flex;
+    flex-direction: row;
+    margin: 2em 0 3em 0;
+}
+.profile-information > .profile-information__avatar {
+    margin-right: 2em;
+    width: 8em;
+    height: 8em;
+    background: lightgrey;
+    border-radius: 50%;
+}
+.profile-information > .profile-information__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.profile-information > .profile-information__text > h1,
+.profile-information > .profile-information__text > p {
+    margin-bottom: 0;
+}
+
+.profile-buttons > .profile-buttons__button {
+    margin: 1.2em 0 1.2em 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.profile-buttons > .profile-buttons__button.logout {
+    color: rgb(83, 177, 117);
+}
