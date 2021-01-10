@@ -1,5 +1,16 @@
 .large-header {
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+.large-header > .anticon {
+    font-size: 1.6em;
+    margin-left: 1em;
+}
+.large-header > .anticon:first-of-type {
+    margin-left: auto;
 }
 
 .content {

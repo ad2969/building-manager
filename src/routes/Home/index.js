@@ -13,12 +13,12 @@ const Home = () => {
     return (
         <div>
             <div class="header">
-                <h2>Hello, Natalie Lee</h2>
+                <h1>Hello, Natalie Lee</h1>
                 <div>Today is {new Date().toDateString()}</div>
             </div>
             <div class="content">
                 <div className="content-header">
-                    <h1>Latest News</h1>
+                    <h2>Latest News</h2>
                     <Link to="/news">See all</Link>
                 </div>
                 {newData.map((data) => <Card {...data} /> )}

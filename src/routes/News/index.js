@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { FilterOutlined, SearchOutlined } from "@ant-design/icons"
 import Card from "../../components/card"
 import "../index.css"
 
@@ -18,15 +19,17 @@ const News = () => {
     return (
         <div>
             <div class="large-header">
-                <h2>News</h2>
+                <h1>News</h1>
+                <SearchOutlined />
+                <FilterOutlined />
             </div>
             <div class="content">
-                <h1>Favourite News</h1>
+                <h2>Favourite News</h2>
                 {favoritedNews.map((data) => <Card {...data} /> )}
 
                 <br />
 
-                <h1>Jan 2021</h1>
+                <h2>Jan 2021</h2>
                 {otherNews.map((data) => <Card {...data} /> )}
             </div>
         </div>
