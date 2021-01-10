@@ -32,9 +32,13 @@ const NAVIGATION_ROUTES = [
     },
 ]
 
-const Navigation = () => {
+const Navigation = ({isSignedIn}) => {
 
     const location = useLocation();
+
+    if (!isSignedIn) {
+        return (null);
+    }
 
     return (
         <div className="navigation">
