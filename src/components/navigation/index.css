@@ -8,25 +8,26 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
-    padding: 1em 0;
+    padding: 1.5em 0;
     box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 .navigation > .navigation-route {
     text-align: center;
-    color: grey;
+    color: black;
     width: 20%;
     text-decoration: none;
     user-select: none;
 }
 .navigation > .navigation-route.active {
-    color: blue;
+    color: rgb(83, 177, 117);
     opacity: 0.75;
 }
 
 .navigation-route > .navigation-route__icon {
-    font-size: 1.5em;
+    font-size: 2em;
+    font-weight: bold;
 }
 .navigation-route > .navigation-route__title {
-    
+    font-weight: bold;
 }

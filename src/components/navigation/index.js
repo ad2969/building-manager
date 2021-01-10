@@ -2,33 +2,27 @@ import React from 'react'
 import { Link, useLocation } from "react-router-dom";
 
 import {
-    FlagFilled,
-    HomeFilled,
-    ReadFilled,
-    ScheduleFilled,
+    CarryOutOutlined,
+    CommentOutlined,
+    HomeOutlined,
     UserOutlined
 } from "@ant-design/icons"
 import "./index.css"
 
 const NAVIGATION_ROUTES = [
     {
-        title: "Home",
-        icon: <HomeFilled />,
-        route: '/home',
-    },
-    {
         title: "News",
-        icon: <ReadFilled />,
+        icon: <HomeOutlined />,
         route: '/news',
     },
     {
-        title: "Bookings",
-        icon: <ScheduleFilled />,
-        route: '/bookings',
+        title: "Community",
+        icon: <CommentOutlined />,
+        route: '/community',
     },
     {
         title: "Requests",
-        icon: <FlagFilled />,
+        icon: <CarryOutOutlined />,
         route: '/requests',
     },
     {

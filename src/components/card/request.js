@@ -12,7 +12,7 @@ const colorRandomizer = () => {
 
 const textColor = colorRandomizer()
 
-const Card = (props) => {
+const RequestCard = (props) => {
 
   const {
     slug,
@@ -54,4 +54,4 @@ const Card = (props) => {
   );
 };
 
-export default Card;
+export default RequestCard;
