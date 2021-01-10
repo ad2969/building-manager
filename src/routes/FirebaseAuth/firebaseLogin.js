@@ -6,7 +6,7 @@ const FirebaseLogin = () => {
 
     const uiConfig = {
         // callbacks: { signInSuccessWithAuthResult: () => false },
-        signInSuccessUrl: "/news",
+        signInSuccessUrl: "/",
         signInOptions: [
             {
                 provider: window.firebase.auth.EmailAuthProvider.PROVIDER_ID,

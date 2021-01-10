@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom"
 
+import Cassa from "../../assets/cassa.png"
 import "./index.css"
 
 function Landing() {
@@ -11,19 +12,25 @@ function Landing() {
 
     useEffect(() => {
 
-        setMounted(true)
+        setTimeout(() => {
+            setMounted(true)
+        }, 1000)
+
         setTimeout(() => {
             setLoaded(true)
         }, 3000)
         
         setTimeout(() => {
             history.push('/news')
-        }, 5000)
+        }, 6000)
     }, [])
 
     return (
         <div className={loaded ? "landing-splash inactive" : "landing-splash"}>
-            <h1 className={mounted ? "active" : ""}>hōm</h1>
+            <div className={mounted ? "landing-text active" : "landing-text"}>
+                <img src={Cassa} alt="cassa" />
+                <h1>cassa</h1>
+            </div>
         </div>
     )
 }
