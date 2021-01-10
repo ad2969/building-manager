@@ -4,15 +4,16 @@ import { useCookies } from 'react-cookie';
 import firebase from 'firebase';
 
 import PrivateRoute from "./PrivateRoute";
-import Home from "./Home";
-import Landing from "./Landing";
-import NotFound from "./NotFound";
 import FirebaseLogin from "./FirebaseAuth/firebaseLogin";
+
+import Landing from "./Landing";
+import News from "./News";
+import Requests from "./Requests";
+import NotFound from "./NotFound";
 
 import Navigation from "../components/navigation"
 
 const Routes = () => {
-
 
   const [cookies] = useCookies();
   initFirebase();
@@ -25,13 +26,17 @@ const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
-      <Route path="/login" component={FirebaseLogin} />
+        <Route path="/login" component={FirebaseLogin} />
         {/* MANAGER ROUTES */}
 
         {/* USER ROUTES */}
-        <PrivateRoute exact path="/home" component={Home} isSignedIn={isSignedIn} />
+        <PrivateRoute exact path="/news" component={News} isSignedIn={isSignedIn} />
+        <PrivateRoute exact path="/requests" component={Requests} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/" component={Landing} isSignedIn={isSignedIn} />
+
+        {/* FALLBACK */}
         <Route path="*" component={NotFound} />
+
       </Switch>
       <Navigation isSignedIn={isSignedIn} />
     </BrowserRouter>
