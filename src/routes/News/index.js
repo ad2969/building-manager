@@ -4,7 +4,7 @@ import { FilterOutlined, SearchOutlined } from "@ant-design/icons"
 import NewsCard from "../../components/card/news"
 import "../index.css"
 
-import SAMPLE_DATA from "../../constants/sampleData"
+import SAMPLE_NEWS from "../../constants/sampleNews"
 
 const News = () => {
 
@@ -17,7 +17,7 @@ const News = () => {
             </div>
             <div className="content-background">
                 <div className="content">
-                    {SAMPLE_DATA.map((data) => <NewsCard {...data} /> )}
+                    {SAMPLE_NEWS.map((news) => <NewsCard {...news} /> )}
                 </div>
             </div>
         </div>
