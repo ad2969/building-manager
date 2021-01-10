@@ -26,6 +26,7 @@
     background: rgb(83, 177, 117);
     display: flex;
     flex-direction: column;
+    z-index: 2;
 }
 .content {
     padding: 0 1.5em 10em 1.5em;
@@ -77,11 +78,20 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    z-index: 1;
+    position: relative;
 }
 .detail-header > img {
     height: auto;
     width: 40%;
     margin: 2em auto;
+}
+.detail-header.request > img {
+    min-height: 100%;
+    min-width: 100%;
+    margin: 0;
+    overflow: auto;
+    transform: scale(1.2) translateY(2em);
 }
 .detail-header > .detail-header__close-button {
     color: white;
@@ -98,4 +108,70 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.news-content-detail__date, .request-content-detail__date {
+    color: grey;
+    font-size: 0.75em;
+}
+.news-content-detail__title, .request-content-detail__date {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.news-content-detail__category, .request-content-detail__progress {
+    font-size: 0.75em;
+    margin: 0.75em 0;
+}
+.news-content-detail__category > span,
+.request-content-detail__progress > span {
+    padding: 0.25em 0.75em;
+    border-radius: 1em;
+}
+.request-content-detail__images {
+    display: flex;
+    flex-direction: row;
+}
+.request-content-detail__images > img {
+    margin-right: 1em;
+    border-radius: 1em;
+    height: 8em;
+    margin-bottom: 1em;
+}
+
+.content.detail > .ant-slider {
+    margin-top: 1.5em;
+}
+.ant-slider > .ant-slider-rail {
+    background-color: lightgrey !important;
+    height: 1em;
+    border-radius: 1em;
+}
+.ant-slider > .ant-slider-track {
+    background-color: rgb(205, 252, 229) !important;
+    height: 1em;
+    border-radius: 1em;
+}
+.ant-slider-handle {
+    height: 1.6em;
+    width: 1.6em;
+    background-color: rgb(83, 177, 117) !important;
+    border: none;
+}
+.ant-slider-step {
+    height: 1em;
+}
+.ant-slider-step > .ant-slider-dot {
+    display: none;
+}
+.ant-slider-mark .ant-slider-mark-text:first-child {
+    top: 1em;
+    transform: translateX(0%) !important;
+}
+.ant-slider-mark .ant-slider-mark-text:last-child {
+    top: 1em;
+    transform: translateX(-100%) !important;
+}
+
+.page-background > .ant-empty {
+    margin-top: 30%;
 }

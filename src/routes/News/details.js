@@ -8,7 +8,6 @@ import {
 } from "@ant-design/icons"
 import NewsIcon from "../../assets/news-icon.png"
 import "../index.css"
-import "./index.css"
 
 import SAMPLE_NEWS from "../../constants/sampleNews"
 import NEWS_CATEGORIES from "../../constants/newsCategories"
@@ -27,9 +26,9 @@ const NewsDetails = () => {
             </div>
             {currentNews ? <div className="content-background detail" style={{ background: NEWS_CATEGORIES[currentCategory].primaryColor }}>
                 <div className="content detail">
-                    <div className="content-detail__date">Posted {currentNews.date}</div>
-                    <div className="content-detail__title">{currentNews.title}</div>
-                    <div className="content-detail__category">
+                    <div className="news-content-detail__date">Posted {currentNews.date}</div>
+                    <div className="news-content-detail__title">{currentNews.title}</div>
+                    <div className="news-content-detail__category">
                         <span style={{ background: NEWS_CATEGORIES[currentCategory].secondaryColor }}>{NEWS_CATEGORIES[currentCategory].label}</span>
                     </div>
 
