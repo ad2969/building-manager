@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Home from "./Home";
 import Landing from "./Landing";
+import News from "./News";
 import NotFound from "./NotFound";
 
 import Navigation from "../components/navigation"
@@ -20,6 +21,7 @@ const Routes = () => {
         {/* MANAGER ROUTES */}
 
         {/* USER ROUTES */}
+        <Route exact path="/news" component={News} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/" component={Landing} />
         <Route path="*" component={NotFound} />

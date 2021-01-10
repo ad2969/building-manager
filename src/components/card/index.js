@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom"
 
 import { HeartFilled, HeartOutlined } from "@ant-design/icons"
 import "./index.css";
@@ -14,19 +15,26 @@ const textColor = colorRandomizer()
 const Card = (props) => {
 
   const {
+    slug,
     category = '',
     title,
     date = '',
     imageUrl,
     isNew = false,
     likeable = true,
+    favorited = false
   } = props;
 
-  const [liked, setLiked] = useState(false)
+  const history = useHistory()
+  const [liked, setLiked] = useState(favorited)
+
+  const redirectToNews = () => {
+    history.push(`/news/${slug}`)
+  }
 
   return (
     <div className="card">
-      <div className="card-photo">
+      <div className="card-photo" onClick={redirectToNews}>
         <img src={imageUrl} alt={`card-${title}`} />
       </div>
       {likeable && <div className="card-like" onClick={() => setLiked(!liked)}>

@@ -1,28 +1,15 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 import Card from "../../components/card"
-import "./index.css"
+import "../index.css"
 
-const SAMPLE_DATA = [
-    {
-        category: "Maintenance",
-        title: "Fire & Safety Repairs",
-        date: "2hr ago",
-        imageUrl: "https://firefighting-images.scdn1.secure.raxcdn.com/news/920/fire-safety-precautions-in-building-920.jpg",
-        isNew: true,
-        likeable: true
-    },
-    {
-        category: "General Notice",
-        title: "Security Reminder",
-        date: "1 day ago",
-        imageUrl: "https://firefighting-images.scdn1.secure.raxcdn.com/news/920/fire-safety-precautions-in-building-920.jpg",
-        isNew: true,
-        likeable: true
-    }
-]
+import SAMPLE_DATA from "../../constants/sampleData"
 
 const Home = () => {
+
+    const newData = SAMPLE_DATA.filter((data) => data.isNew)
+
     return (
         <div>
             <div class="header">
@@ -30,8 +17,11 @@ const Home = () => {
                 <div>Today is {new Date().toDateString()}</div>
             </div>
             <div class="content">
-                <h1>Latest News</h1>
-                {SAMPLE_DATA.map((data) => <Card {...data} /> )}
+                <div className="content-header">
+                    <h1>Latest News</h1>
+                    <Link to="/news">See all</Link>
+                </div>
+                {newData.map((data) => <Card {...data} /> )}
             </div>
         </div>
     )

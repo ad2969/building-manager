@@ -1,0 +1,22 @@
+.large-header {
+
+}
+
+.content {
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    padding-bottom: 8em;
+}
+
+.content-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.content-header > a {
+    user-select: none;
+    text-decoration: none;
+    margin-left: auto;
+    color: blue;
+    font-weight: bold;
+}
