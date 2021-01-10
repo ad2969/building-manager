@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
 import RequestCard from "../../components/card/request"
 import { PlusCircleFilled } from "@ant-design/icons"
 import { Tabs } from 'antd';
 import "../index.css"
-
-import SAMPLE_REQUESTS from "../../constants/sampleRequests"
 
 const { TabPane } = Tabs;
 
@@ -15,7 +13,19 @@ const Requests = () => {
     const completedRequests = [];
     const incompletedRequests = [];
 
-    SAMPLE_REQUESTS.forEach((request) => {
+    const [requests, setRequests] = useState([]);
+
+    if (!requests.length) {
+        fetch('http://localhost:3001/db/maintenance')
+        .then(response => response.json())
+        .then(rows => {
+            console.log(rows);
+            setRequests(rows);
+        })
+        .catch(console.log);
+    }
+
+    requests.forEach((request) => {
         if(new Date(request.completionDate) <= new Date()) completedRequests.push(request)
         else incompletedRequests.push(request)
     })

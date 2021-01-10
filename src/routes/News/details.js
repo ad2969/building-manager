@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 
 import { Empty } from 'antd';
@@ -9,13 +9,24 @@ import {
 import NewsIcon from "../../assets/news-icon.png"
 import "../index.css"
 
-import SAMPLE_NEWS from "../../constants/sampleNews"
 import NEWS_CATEGORIES from "../../constants/newsCategories"
 
 const NewsDetails = () => {
 
+    const [news, setNews] = useState([]);
+
+    if (!news.length) {
+        fetch('http://localhost:3001/db/news')
+        .then(response => response.json())
+        .then(rows => {
+            console.log(rows);
+            setNews(rows);
+        })
+        .catch(console.log);
+    }
+
     const { slug } = useParams();
-    const currentNews = SAMPLE_NEWS.find((news) => news.slug === slug)
+    const currentNews = news.find((news) => news.slug === slug)
     const currentCategory = (currentNews && currentNews.category) || "GENERAL_NOTICE"
 
     return (

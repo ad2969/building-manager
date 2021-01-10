@@ -19,7 +19,7 @@ const GetNews = next => {
     });
 }
 
-const GetMaintenence = next => {
+const GetMaintenance = next => {
     client.query('SELECT * FROM maintenance;', (err, results) => {
         if (err) {
             console.error('Error selecting from maintenance: ', err);
@@ -29,5 +29,16 @@ const GetMaintenence = next => {
     });
 }
 
+const GetCommunity = next => {
+    client.query(`SELECT author, title, description, encode('imageUrl', 'base64') as "imageUrl", encode("avatarUrl", 'base64') as "avatarUrl" FROM community;`, (err, results) => {
+        if (err) {
+            console.error('Error selecting from community: ', err);
+            return next(err);
+        }
+        next(results.rows);
+    });
+}
+
 exports.GetNews = GetNews;
-exports.GetMaintenence = GetMaintenence;
+exports.GetMaintenance = GetMaintenance;
+exports.GetCommunity = GetCommunity;

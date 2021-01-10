@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useParams } from "react-router-dom";
 
 import { Empty, Slider } from 'antd';
@@ -8,13 +8,24 @@ import {
 } from "@ant-design/icons"
 import "../index.css"
 
-import SAMPLE_REQUESTS from "../../constants/sampleRequests"
 import REQUEST_PROGRESS from "../../constants/requestProgress"
 
 const RequestDetails = () => {
 
+    const [requests, setRequests] = useState([]);
+
+    if (!requests.length) {
+        fetch('http://localhost:3001/db/maintenance')
+        .then(response => response.json())
+        .then(rows => {
+            console.log(rows);
+            setRequests(rows);
+        })
+        .catch(console.log);
+    }
+
     const { slug } = useParams();
-    const currentRequest = SAMPLE_REQUESTS.find((request) => request.slug === slug)
+    const currentRequest = requests.find((request) => request.slug === slug)
     const currentProgress = (currentRequest && currentRequest.progress) || "NOT_STARTED"
 
     const completionMarks = {
