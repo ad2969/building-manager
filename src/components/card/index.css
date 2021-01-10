@@ -1,4 +1,4 @@
-.request-card, .news-card {
+.request-card, .news-card, .community-card {
     border-radius: 1.5em;
     border: 1px solid lightgrey;
     display: flex;
@@ -34,6 +34,7 @@
     padding: 0.25em 0.75em;
     border-radius: 1em;
 }
+
 
 .request-card {
     flex-direction: column;
@@ -71,4 +72,26 @@
 .request-card-description__progress > span {
     padding: 0.25em 0.75em;
     border-radius: 1em;
+}
+
+
+.community-card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    border: none;
+}
+.community-card > .community-card-author {
+    display: flex;
+    flex-direction: row;
+}
+.community-card > .community-card-author > img {
+    height: 1em;
+    width: 1em;
+    margin-right: 0.5em;
+}
+.community-card > .community-card-author > span {
+    font-size: 1em;
+    color: grey;
 }
