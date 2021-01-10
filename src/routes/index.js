@@ -3,17 +3,18 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Landing from "./Landing";
 import NotFound from "./NotFound";
+import FirebaseAuth from "./FirebaseAuth";
 
 const Routes = () => {
 
   // Load user session
   useEffect(() => {
-    //   Do firebase user authentication stuff here
   }, []);
 
   return (
     <BrowserRouter>
       <Switch>
+      <Route path="/auth" component={FirebaseAuth} />
         {/* MANAGER ROUTES */}
 
         {/* USER ROUTES */}
