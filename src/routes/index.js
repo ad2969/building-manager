@@ -8,6 +8,7 @@ import FirebaseLogin from "./FirebaseAuth/firebaseLogin";
 
 import Landing from "./Landing";
 import News from "./News";
+import NewsDetails from "./News/details";
 import Requests from "./Requests";
 import NotFound from "./NotFound";
 
@@ -30,6 +31,7 @@ const Routes = () => {
         {/* MANAGER ROUTES */}
 
         {/* USER ROUTES */}
+        <PrivateRoute exact path="/news/:slug" component={NewsDetails} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/news" component={News} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/requests" component={Requests} isSignedIn={isSignedIn} />
         <PrivateRoute exact path="/" component={Landing} isSignedIn={isSignedIn} />
