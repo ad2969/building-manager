@@ -1,12 +1,13 @@
 import React, { useState } from 'react'
 
+import SAMPLE_NEWS from "../../constants/sampleNews"
 import { FilterOutlined, SearchOutlined } from "@ant-design/icons"
 import NewsCard from "../../components/card/news"
 import "../index.css"
 
 const News = () => {
 
-    const [news, setNews] = useState([]);
+    const [news, setNews] = useState(SAMPLE_NEWS);
 
     if (!news.length) {
         fetch('http://localhost:3001/db/news')

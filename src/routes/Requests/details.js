@@ -8,11 +8,12 @@ import {
 } from "@ant-design/icons"
 import "../index.css"
 
+import SAMPLE_REQUESTS from "../../constants/sampleRequests"
 import REQUEST_PROGRESS from "../../constants/requestProgress"
 
 const RequestDetails = () => {
 
-    const [requests, setRequests] = useState([]);
+    const [requests, setRequests] = useState(SAMPLE_REQUESTS);
 
     if (!requests.length) {
         fetch('http://localhost:3001/db/maintenance')

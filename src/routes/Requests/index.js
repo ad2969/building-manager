@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 
+import SAMPLE_REQUESTS from "../../constants/sampleRequests"
 import RequestCard from "../../components/card/request"
 import { PlusCircleFilled } from "@ant-design/icons"
 import { Tabs } from 'antd';
@@ -13,7 +14,7 @@ const Requests = () => {
     const completedRequests = [];
     const incompletedRequests = [];
 
-    const [requests, setRequests] = useState([]);
+    const [requests, setRequests] = useState(SAMPLE_REQUESTS);
 
     if (!requests.length) {
         fetch('http://localhost:3001/db/maintenance')

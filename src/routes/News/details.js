@@ -9,11 +9,12 @@ import {
 import NewsIcon from "../../assets/news-icon.png"
 import "../index.css"
 
+import SAMPLE_NEWS from "../../constants/sampleNews"
 import NEWS_CATEGORIES from "../../constants/newsCategories"
 
 const NewsDetails = () => {
 
-    const [news, setNews] = useState([]);
+    const [news, setNews] = useState(SAMPLE_NEWS);
 
     if (!news.length) {
         fetch('http://localhost:3001/db/news')
